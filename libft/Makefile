@@ -6,7 +6,7 @@
 #    By: tihendri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 14:09:03 by tihendri          #+#    #+#              #
-#    Updated: 2019/06/12 13:40:04 by tihendri         ###   ########.fr        #
+#    Updated: 2019/06/14 09:15:50 by tihendri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ FILES 	= $(PART1) $(PART2) $(BONUS)
 
 SRC		= $(addprefix src/, $(FILES))
 OBJ 	= $(addprefix obj/, $(FILES:.c=.o))
-
 .PHONY: all clean fclean re
 
 all: $(NAME)
