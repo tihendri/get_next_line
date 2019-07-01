@@ -6,7 +6,7 @@
 /*   By: tihendri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:26:58 by tihendri          #+#    #+#             */
-/*   Updated: 2019/06/12 14:06:14 by tihendri         ###   ########.fr       */
+/*   Updated: 2019/06/28 09:48:02 by tihendri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
@@ -37,11 +36,13 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_atoi(const char *str);
+int					ft_count_letters(const char *str, char c);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_iswhitespace(char c);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_putchar(int c);
 int					ft_strcmp(const char *s1, const char *s2);
@@ -68,6 +69,7 @@ void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
+void				*ft_realloc(void *ptr, size_t size);
 void				ft_strclr(char *s);
 void				ft_strdel(char **as);
 void				ft_striter(char *s, void (*f)(char *));

@@ -11,8 +11,13 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+/*
+**The gnl function returns a line frm the file descriptor.
+**A line is succession of characters that end with a '\n' or '\0'.
+**
+*/
 
-int		ft_new_line(char **s, char **line, int fd, int ret)
+static int	ft_new_line(char **s, char **line, int fd, int ret)
 {
 	char	*tmp;
 	int		len;
@@ -25,7 +30,7 @@ int		ft_new_line(char **s, char **line, int fd, int ret)
 		*line = ft_strsub(s[fd], 0, len);
 		tmp = ft_strdup(s[fd] + len + 1);
 		free(s[fd]);
-		s[fd] = tmp;
+	s[fd] = tmp;
 		if (s[fd][0] == '\0')
 			ft_strdel(&s[fd]);
 	}
@@ -38,6 +43,16 @@ int		ft_new_line(char **s, char **line, int fd, int ret)
 	}
 	return (1);
 }
+
+/*
+**The first parameter is the file descriptor that will be used to read.
+**The second parameter is the address of a pointer to a character that will be used
+**to save the line read from the file descriptor.
+**The function will return '1' when the line has been read.
+**The function will return '0' when all the lines have been read.
+**The function will return '-1' when an error has occured while reading.
+**
+*/
 
 int		get_next_line(const int fd, char **line)
 {
