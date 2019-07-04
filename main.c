@@ -6,13 +6,14 @@
 /*   By: tihendri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 12:57:46 by tihendri          #+#    #+#             */
-/*   Updated: 2019/07/04 12:58:17 by tihendri         ###   ########.fr       */
+/*   Updated: 2019/07/04 15:14:54 by tihendri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <fcntl.h>
 
 int main(void)
 {

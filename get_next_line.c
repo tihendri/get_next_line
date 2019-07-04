@@ -6,7 +6,7 @@
 /*   By: tihendri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:26:30 by tihendri          #+#    #+#             */
-/*   Updated: 2019/07/04 14:48:06 by tihendri         ###   ########.fr       */
+/*   Updated: 2019/07/04 15:50:47 by tihendri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static int	ft_new_line(char **s, char **line, int fd)
 **This will take you to the ternary operation where if the return value
 **is 0 and s[fd] is NULL or '\0', return 0, otherwise return the function
 **ft_new_line.
+**255 is the maximum number of file descriptors you can have open.
 */
 
 int			get_next_line(const int fd, char **line)
