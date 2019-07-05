@@ -6,15 +6,12 @@
 /*   By: tihendri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:26:38 by tihendri          #+#    #+#             */
-/*   Updated: 2019/07/03 15:41:23 by tihendri         ###   ########.fr       */
+/*   Updated: 2019/07/04 14:43:19 by tihendri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
