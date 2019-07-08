@@ -20,7 +20,7 @@
 **creates a new allocation, copies as much of the old data pointed to by ptr
 **as will fit to the new allocation, frees the old allocation, and returns a
 **pointer to the allocated memory.
-**If ptr is NULL, function identical to a call to malloc() for size bytes.
+**If ptr is NULL, ft_realloc is identical to a call to malloc() for size bytes.
 **If size is zero and ptr is not NULL, a new, minimum sized object is allocated
 **and the original object is freed.
 */

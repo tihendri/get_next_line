@@ -13,7 +13,7 @@
 #include "get_next_line.h"
 
 /*
-**The gnl function returns a line from the file descriptor.
+**The gnl function returns a line read from the file descriptor.
 **A line is succession of characters that end with a '\n' or '\0'.
 **ft_new_line looks for the '\n' or '\0' character.
 **- If it finds a '\n' it creates a substring for the entire text up until that
@@ -27,9 +27,9 @@
 **return (1) to signify that the line has been read.
 */
 
-static int	ft_new_line(char **s, char **line, int fd)
+static int	ft_check_new_line(char **s, char **line, int fd)
 {
-	char	*tmp;
+	char	*temp;
 	int		len;
 
 	len = 0;
@@ -38,9 +38,9 @@ static int	ft_new_line(char **s, char **line, int fd)
 	if (s[fd][len] == '\n')
 	{
 		*line = ft_strsub(s[fd], 0, len);
-		tmp = ft_strdup(s[fd] + len + 1);
+		temp = ft_strdup(s[fd] + len + 1);
 		free(s[fd]);
-		s[fd] = tmp;
+		s[fd] = temp;
 		if (s[fd][0] == '\0')
 			ft_strdel(&s[fd]);
 	}
@@ -76,7 +76,7 @@ int			get_next_line(const int fd, char **line)
 {
 	static char	*s[255];
 	char		buf[BUFF_SIZE + 1];
-	char		*tmp;
+	char		*temp;
 	int			ret;
 
 	if (fd < 0 || line == NULL)
@@ -88,14 +88,19 @@ int			get_next_line(const int fd, char **line)
 			s[fd] = ft_strdup(buf);
 		else
 		{
-			tmp = ft_strjoin(s[fd], buf);
+			temp = ft_strjoin(s[fd], buf);
 			free(s[fd]);
-			s[fd] = tmp;
+			s[fd] = temp;
 		}
 		if (ft_strchr(s[fd], '\n'))
 			break ;
 	}
 	if (ret < 0)
 		return (-1);
+<<<<<<< HEAD
 	return ((ret == 0 && s[fd] == NULL) ? 0 : ft_new_line(s, line, fd));
+=======
+	return ((ret == 0 && (s[fd] == NULL ||
+					s[fd][0] == '\0')) ? 0 : ft_check_new_line(s, line, fd));
+>>>>>>> cf73078b43673329e39018fdc7abfec52139b1cc
 }
