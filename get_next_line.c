@@ -6,7 +6,7 @@
 /*   By: tihendri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 09:26:30 by tihendri          #+#    #+#             */
-/*   Updated: 2019/07/04 15:50:47 by tihendri         ###   ########.fr       */
+/*   Updated: 2019/07/08 14:24:07 by tihendri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ft_new_line(char **s, char **line, int fd)
 		if (s[fd][0] == '\0')
 			ft_strdel(&s[fd]);
 	}
-	else if (s[fd][len] == '\0')
+	else
 	{
 		*line = ft_strdup(s[fd]);
 		ft_strdel(&s[fd]);
@@ -97,6 +97,5 @@ int			get_next_line(const int fd, char **line)
 	}
 	if (ret < 0)
 		return (-1);
-	return ((ret == 0 && (s[fd] == NULL ||
-					s[fd][0] == '\0')) ? 0 : ft_new_line(s, line, fd));
+	return ((ret == 0 && s[fd] == NULL) ? 0 : ft_new_line(s, line, fd));
 }
